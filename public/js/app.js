@@ -2,7 +2,7 @@ console.log("something console");
 
 const myFunc = () => {
   const value = document.getElementById("value").value;
-  fetch("http://localhost:3000/weather?location=" + value).then((res) => {
+  fetch("/weather?location=" + value).then((res) => {
     res.json().then((data) => {
       if (data.error) {
         document.getElementById("error").innerHTML = data.error;

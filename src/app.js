@@ -6,6 +6,7 @@ const viewPaths = path.join(__dirname, "../templates/views");
 const partialPaths = path.join(__dirname, "../templates/partials");
 var geocode = require("./utils/geocode.js");
 var weather = require("./utils/forecast.js");
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.set("view engine", "hbs");
@@ -45,6 +46,6 @@ app.get("*", (req, res) => {
   res.render("notfound", { name: "Kunal", title: "About Me" });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("app is running");
 });
